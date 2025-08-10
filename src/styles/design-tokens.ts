@@ -320,28 +320,24 @@ export const components = {
   },
 } as const;
 
-// =============================================================================
-// UTILITY FUNCTIONS
-// =============================================================================
 
-/**
- * Get color value by path (e.g., 'primary.500')
- */
+type ColorObject = { [key: string]: string | ColorObject };
+
 export const getColor = (path: string): string => {
   const keys = path.split('.');
-  let value: any = colors;
+  let value: ColorObject | string = colors;
   
   for (const key of keys) {
-    if (typeof value === 'object' && value !== null && key in value) {
-      const nestedValue: any = value[key];
-      if (typeof nestedValue === 'string') {
-        value = nestedValue;
-        break; 
-      } else if (typeof nestedValue === 'object') {
-        value = nestedValue;
-      } else {
-        return path;
-      }
+    if (typeof value === 'object' && value !== null && !Array.isArray(value) && key in value) {
+        const nestedValue = value[key];
+        if (typeof nestedValue === 'string') {
+            value = nestedValue;
+            break;
+        } else if (typeof nestedValue === 'object' && nestedValue !== null) {
+            value = nestedValue as ColorObject;
+        } else {
+            return path;
+        }
     } else {
       return path;
     }
@@ -357,7 +353,6 @@ export const getFontFamily = (family: keyof typeof typography.fontFamily): strin
   return typography.fontFamily[family].join(', ');
 };
 
-// Type definitions for better TypeScript support
 export type ColorScale = keyof typeof colors.primary;
 export type ColorFamily = keyof typeof colors;
 export type FontFamily = keyof typeof typography.fontFamily;

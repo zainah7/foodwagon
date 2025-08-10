@@ -5,21 +5,32 @@ import { colors, typography, spacing, shadows, borderRadius } from '../styles/de
  * Provides a consistent way to use design tokens throughout the app
  */
 export const useDesignTokens = () => {
-  return {
-    colors,
-    typography,
-    spacing,
-    shadows,
-    borderRadius,
-    
-    // Helper functions
-    getColor: (path: string) => {
-      const keys = path.split('.');
-      let value: any = colors;
+// Helper types
+type ColorObject = { [key: string]: string | ColorObject };
+
+return {
+  colors,
+  typography,
+  spacing,
+  shadows,
+  borderRadius,
+  
+  // Helper functions
+  getColor: (path: string) => {
+    const keys = path.split('.');
+    let value: ColorObject | string = colors;
       
       for (const key of keys) {
         if (typeof value === 'object' && value !== null && key in value) {
-          value = value[key as keyof typeof value];
+          const nestedValue = value[key];
+          if (typeof nestedValue === 'string') {
+            value = nestedValue;
+            break;
+          } else if (typeof nestedValue === 'object') {
+            value = nestedValue as ColorObject;
+          } else {
+            return path;
+          }
         } else {
           return path; // Return original path if not found
         }
