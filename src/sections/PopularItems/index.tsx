@@ -8,7 +8,8 @@ import { useQuery } from '@tanstack/react-query';
 
 
 // Handle order click (moved outside component)
-const handleOrderClick = (item: any) => {
+import type { PopularItem } from '@/hooks/usePopularItemsStore';
+const handleOrderClick = (item: PopularItem) => {
   // TODO: Implement order logic, e.g., open modal or add to cart
   alert(`Order placed for: ${item.title}`);
 };

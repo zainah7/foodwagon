@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-interface PopularItem {
+export interface PopularItem {
   id: number;
   image: string;
   title: string;

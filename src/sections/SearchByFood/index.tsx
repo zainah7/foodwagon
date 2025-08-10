@@ -81,7 +81,13 @@ export default function SearchByFood() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {filteredItems.map((item) => (
                   <div key={item.id} className="bg-white rounded-xl shadow p-4 flex flex-col items-center">
-                    <img src={item.image} alt={item.title} className="w-32 h-32 object-cover rounded-lg mb-2" />
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={128}
+                      height={128}
+                      className="w-32 h-32 object-cover rounded-lg mb-2"
+                    />
                     <h3 className="font-bold text-lg mb-1">{item.title}</h3>
                     <div className="text-gray-600 mb-1">{item.restaurant}</div>
                     <div className="font-semibold text-[#F65900] mb-1">{item.price}</div>
