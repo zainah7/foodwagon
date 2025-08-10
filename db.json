@@ -1,0 +1,184 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "image": "/assets/images/food-world.png",
+      "logo": "/assets/images/food-world-logo.png",
+      "name": "Foodworld",
+      "slug": "foodworld",
+      "status": "Opens tomorrow",
+      "discount": "20% off",
+      "rating": 46
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/pizza-hub.png",
+      "logo": "/assets/images/pizzahub-logo.png",
+      "name": "Pizzahub",
+      "slug": "pizzahub",
+      "status": "Opens tomorrow",
+      "discount": "15% off",
+      "rating": 40
+    },
+    {
+      "id": 3,
+      "image": "/assets/images/donuts-hut.png",
+      "logo": "/assets/images/donuts-hut-logo.png",
+      "name": "Donuts hut",
+      "slug": "donuts-hut",
+      "status": "Open Now",
+      "discount": "10% off",
+      "rating": 20
+    },
+    {
+      "id": 4,
+      "image": "/assets/images/kuakata.png",
+      "logo": "/assets/images/kuakata-logo.png",
+      "name": "Kuakata Fried Chicken",
+      "slug": "kuakata-fried-chicken",
+      "status": "Open Now",
+      "discount": "25% off",
+      "rating": 35
+    },
+    {
+      "id": 5,
+      "image": "/assets/images/red-square.png",
+      "logo": "/assets/images/red-square-logo.png",
+      "name": "Red Square",
+      "slug": "red-square",
+      "status": "Open Now",
+      "discount": "30% off",
+      "rating": 50
+    },
+    {
+      "id": 6,
+      "image": "/assets/images/ruby-tuesday.png",
+      "logo": "/assets/images/ruby-tuesday-logo.png",
+      "name": "Ruby Tuesday",
+      "slug": "ruby-tuesday",
+      "status": "Open Now",
+      "discount": "18% off",
+      "rating": 28
+    },
+    {
+      "id": 7,
+      "image": "/assets/images/taco-bell.png",
+      "logo": "/assets/images/taco-bell-logo.png",
+      "name": "Taco Bell",
+      "slug": "taco-bell",
+      "status": "Open Now",
+      "discount": "12% off",
+      "rating": 32
+    },
+    {
+      "id": 8,
+      "image": "/assets/images/donuthut.png",
+      "logo": "/assets/images/donut-hut-logo.png",
+      "name": "Donut Hut",
+      "slug": "donut-hut",
+      "status": "Open Now",
+      "discount": "22% off",
+      "rating": 38
+    }
+  ],
+  "deals": [
+    {
+      "id": 1,
+      "title": "Best deals Crispy Sandwiches",
+      "description": "Enjoy the large size of sandwiches. Complete perfect slice of sandwiches.",
+      "image": "/assets/images/crispy-sandwiches.png",
+      "isSpecial": true
+    },
+    {
+      "id": 2,
+      "title": "Celebrate parties with Fried Chicken",
+      "description": "Get the best fried chicken smeared with a lip smacking lemon chili flavor. Check out best deals for fried chicken.",
+      "image": "/assets/images/fried-chicken.png",
+      "isSpecial": true
+    },
+    {
+      "id": 3,
+      "title": "Wanna eat hot & spicy Pizza?",
+      "description": "Pair up with a friend and enjoy the hot and crispy pizza pops. Try it with the best deals.",
+      "image": "/assets/images/pizza.png",
+      "isSpecial": true
+    }
+  ],
+  "discounts": [
+    {
+      "id": 1,
+      "image": "/assets/images/discount-item-1.png",
+      "discount": "15%",
+      "title": "Greys Vage",
+      "daysRemaining": "6 Days Remaining"
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/discount-item-2.png",
+      "discount": "10%",
+      "title": "Greys Vage",
+      "daysRemaining": "6 Days Remaining"
+    },
+    {
+      "id": 3,
+      "image": "/assets/images/discount-item-3.png",
+      "discount": "25%",
+      "title": "Greys Vage",
+      "daysRemaining": "7 Days Remaining"
+    },
+    {
+      "id": 4,
+      "image": "/assets/images/discount-item-4.png",
+      "discount": "20%",
+      "title": "Greys Vage",
+      "daysRemaining": "8 Days Remaining"
+    }
+  ],
+  "popularItems": [
+    {
+      "id": 1,
+      "image": "/assets/images/burger.png",
+      "title": "Cheese Burger",
+      "restaurant": "Burger Arena",
+      "price": "$3.88",
+      "originalPrice": "$4.50",
+      "rating": 4.9
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/toffes-cake.png",
+      "title": "Toffe's Cake",
+      "restaurant": "Top Sticks",
+      "price": "$4.00",
+      "originalPrice": "$5.20",
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "image": "/assets/images/dancake.png",
+      "title": "Dancake",
+      "restaurant": "Cake World",
+      "price": "$1.99",
+      "originalPrice": "$2.50",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "image": "/assets/images/crispy-sandwitch.png",
+      "title": "Crispy Sandwitch",
+      "restaurant": "Fastfood Dine",
+      "price": "$3.00",
+      "originalPrice": "$3.75",
+      "rating": 4.6
+    },
+    {
+      "id": 5,
+      "image": "/assets/images/thai-soup.png",
+      "title": "Thai Soup",
+      "restaurant": "Foody Mood",
+      "price": "$2.79",
+      "originalPrice": "$3.50",
+      "rating": 4.5
+    }
+  ]
+}

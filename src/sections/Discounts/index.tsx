@@ -1,13 +1,34 @@
-import Image from 'next/image';
-import { discountItems } from '@/lib/data/discount-data';
 
-export default function Discounts() {
+"use client";
+import React from 'react';
+import Image from 'next/image';
+import { useQuery } from '@tanstack/react-query';
+import { useDiscountStore } from '@/hooks/useDiscountStore';
+
+const Discounts: React.FC = () => {
+  const setDiscounts = useDiscountStore((state) => state.setDiscounts);
+  const discounts = useDiscountStore((state) => state.discounts);
+
+  const { isLoading, error } = useQuery({
+    queryKey: ['discounts'],
+    queryFn: async () => {
+      const res = await fetch('http://localhost:4000/discounts');
+      if (!res.ok) throw new Error('Failed to fetch discounts');
+      const data = await res.json();
+      setDiscounts(data);
+      return data;
+    },
+    staleTime: 1000 * 60 * 5, // 5 minutes
+  });
+
   return (
     <section className="py-12">
       <div className="container mx-auto px-4">
+        {isLoading && <div>Loading...</div>}
+        {error && <div className="text-red-500">{(error as Error).message}</div>}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {discountItems.map((item, index) => (
-            <div key={index} className="bg-white overflow-hidden">
+          {!isLoading && !error && discounts.map((item, index) => (
+            <div key={item.id || index} className="bg-white overflow-hidden">
               <div className="relative">
                 <Image src={item.image} alt={item.title} width={300} height={200} className="w-full rounded-2xl" />
                 <div className="absolute bottom-0 left-0 bg-chart-4 text-white px-3 py-2 rounded-tr-3xl rounded-bl-xl flex items-center justify-center">
@@ -28,4 +49,6 @@ export default function Discounts() {
       </div>
     </section>
   );
-}
+};
+
+export default Discounts;

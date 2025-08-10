@@ -1,8 +1,20 @@
+"use client";
+import React from 'react';
 import Image from 'next/image';
 import { Button, Input } from '@/lib/shared';
 import { Bike, Handbag, MapPin, Search } from 'lucide-react';
 
-export default function Hero() {
+const Hero: React.FC = () => {
+  const [address, setAddress] = React.useState('');
+
+  const handleFindFood = () => {
+    if (!address.trim()) {
+      alert('Please enter your address.');
+      return;
+    }
+    alert(`Searching for food near: ${address}`);
+  };
+
   return (
     <section className="relative bg-white overflow-hidden min-h-screen sm:min-h-0">
       <div className="absolute inset-0 bg-no-repeat bg-bottom bg-cover bg-[url('/assets/images/hero-bg.png')]"></div>
@@ -42,14 +54,17 @@ export default function Hero() {
                 <div className="lg:flex-1 relative">
                   <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F65900] w-4 h-4 lg:w-5 lg:h-5" />
                   <Input 
-                    type="text" 
-                    placeholder="Enter Your Address" 
+                    type="text"
+                    placeholder="Enter Your Address"
+                    value={address}
+                    onChange={e => setAddress(e.target.value)}
                     className="pl-10 lg:pl-12 pr-4 py-2 lg:py-3 bg-gray-100 border-0 rounded-lg focus:ring-2 focus:ring-chart-4/20 text-gray-700 placeholder-gray-500 text-sm lg:text-base w-full"
                   />
                 </div>
                 <Button 
                   variant="default"
-                  className="flex items-center justify-center gap-2 px-6 lg:px-8 py-2 lg:py-3 font-semibold bg-[#F65900] text-white hover:bg-chart-5/90 text-sm lg:text-base rounded-lg lg:whitespace-nowrap"
+                  onClick={handleFindFood}
+                  className="flex items-center justify-center gap-2 px-6 lg:px-8 py-2 lg:py-3 font-semibold bg-[#F65900] text-white hover:bg-chart-5/90 text-sm lg:text-base rounded-lg lg:whitespace-nowrap cursor-pointer"
                 >
                   <Search size={14} className="lg:w-4 lg:h-4" />
                   Find Food
@@ -75,4 +90,6 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

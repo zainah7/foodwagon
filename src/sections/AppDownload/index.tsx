@@ -69,23 +69,33 @@ export default function AppDownload() {
 
             {/* Download Buttons */}
             <div className="flex mb-9 flex-row gap-4 justify-center lg:justify-start">
-              <a href="#" className="block">
+              <a
+                href="https://play.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
                 <Image
                   src="/assets/images/google-play.svg"
                   alt="Get it on Google Play"
-                  width={180}
+                  width={150}
                   height={54}
-                  className="w-[140px] sm:w-[180px] h-auto transition-transform hover:scale-105"
+                  className="w-[120px] sm:w-[160px] h-auto transition-transform hover:scale-105"
                   style={{ filter: 'drop-shadow(0 10px 15px rgba(244, 129, 2, 0.4))' }}
                 />
               </a>
-              <a href="#" className="block">
+              <a
+                href="https://apps.apple.com/app/id0000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
                 <Image
                   src="/assets/images/app-store.svg"
                   alt="Download on the App Store"
-                  width={180}
+                  width={150}
                   height={54}
-                  className="w-[140px] sm:w-[180px] h-auto transition-transform hover:scale-105"
+                  className="w-[120px] sm:w-[160px] h-auto transition-transform hover:scale-105"
                   style={{ filter: 'drop-shadow(0 10px 15px rgba(244, 129, 2, 0.4))' }}
                 />
               </a>
