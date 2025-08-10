@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { discountItems } from '@/lib/discount-data';
+import { discountItems } from '@/lib/data/discount-data';
 
 export default function Discounts() {
   return (

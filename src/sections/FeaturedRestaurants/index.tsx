@@ -1,6 +1,6 @@
 "use client"
-import { RestaurantCard } from '@/components/shared';
-import { restaurants } from '@/lib/featured-restaurants-data';
+import { RestaurantCard } from '@/lib/shared';
+import { restaurants } from '@/lib/data/featured-restaurants-data';
 
 export default function FeaturedRestaurants() {
   const handleRestaurantClick = (restaurant: typeof restaurants[0]) => {

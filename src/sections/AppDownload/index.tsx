@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { servicesData } from '@/lib/app-download-data';
+import { servicesData } from '@/lib/data/app-download-data';
 
 const iconDimensions = {
   width: 72,

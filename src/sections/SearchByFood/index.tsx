@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { foodItems } from '@/lib/food-items-data';
+import { foodItems } from '@/lib/data/food-items-data';
 
 export default function SearchByFood() {
   return (

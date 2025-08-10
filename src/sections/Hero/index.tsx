@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button, Input } from '@/components/shared';
+import { Button, Input } from '@/lib/shared';
 import { Bike, Handbag, MapPin, Search } from 'lucide-react';
 
 export default function Hero() {

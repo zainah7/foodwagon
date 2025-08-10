@@ -1,4 +1,4 @@
-import { Button } from "../shared";
+import { Button } from "../../lib/shared";
 import { ChevronRight } from "lucide-react";
 
 export default function OrderCTA() {

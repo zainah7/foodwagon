@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
-import { Button } from "../shared";
-import { deals } from "@/lib/deals-data";
+import { Button } from "../../lib/shared";
+import { deals } from "@/lib/data/deals-data";
 
 export default function Deals() {
   return (

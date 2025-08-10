@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image';
 import { MapPin, Search, User, Menu, X } from 'lucide-react';
-import { Button } from '@/components/shared';
+import { Button } from '@/lib/shared';
 import { useState } from 'react';
 
 export default function Navbar() {

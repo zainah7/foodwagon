@@ -1,8 +1,8 @@
 "use client"
 import Image from 'next/image';
-import { Button } from '@/components/shared';
+import { Button } from '@/lib/shared';
 import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
-import { popularItems } from '@/lib/popular-items-data';
+import { popularItems } from '@/lib/data/popular-items-data';
 
 export default function PopularItems() {
   const handleOrderClick = (item: typeof popularItems[0]) => {

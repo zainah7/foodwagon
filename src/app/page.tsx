@@ -1,12 +1,12 @@
-import AppDownload from "@/components/sections/AppDownload";
-import Deals from "@/components/sections/Deals";
-import Discounts from "@/components/sections/Discounts";
-import FeaturedRestaurants from "@/components/sections/FeaturedRestaurants";
-import Hero from "@/components/sections/Hero";
-import HowItWorks from "@/components/sections/HowItWorks";
-import OrderCTA from "@/components/sections/OrderCTA";
-import PopularItems from "@/components/sections/PopularItems";
-import SearchByFood from "@/components/sections/SearchByFood";
+import AppDownload from "@/sections/AppDownload";
+import Deals from "@/sections/Deals";
+import Discounts from "@/sections/Discounts";
+import FeaturedRestaurants from "@/sections/FeaturedRestaurants";
+import Hero from "@/sections/Hero";
+import HowItWorks from "@/sections/HowItWorks";
+import OrderCTA from "@/sections/OrderCTA";
+import PopularItems from "@/sections/PopularItems";
+import SearchByFood from "@/sections/SearchByFood";
 
 export default function Home() {
   return (

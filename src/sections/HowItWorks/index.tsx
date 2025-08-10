@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { steps } from '@/lib/how-it-works-data';
+import { steps } from '@/lib/data/how-it-works-data';
 
 export default function HowItWorks() {
   return (
