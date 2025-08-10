@@ -8,9 +8,7 @@ interface RestaurantCardProps {
   name: string;
   status: string;
   discount: string;
-  category?: string;
   rating?: number;
-  reviewCount?: number;
   onClick?: () => void;
   className?: string;
 }
@@ -21,9 +19,7 @@ export function RestaurantCard({
   name, 
   status, 
   discount, 
-  category,
   rating,
-  reviewCount,
   onClick,
   className 
 }: RestaurantCardProps) {

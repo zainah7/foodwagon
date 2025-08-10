@@ -63,8 +63,8 @@ export default function AppDownload() {
               Install the app
             </h2>
             <p className="text-gray-700 text-lg mb-8 max-w-lg mx-auto lg:mx-0">
-              It's never been easier to order food. Look for the finest
-              discounts and you'll be lost in a world of delectable food.
+              It&apos;s never been easier to order food. Look for the finest
+              discounts and you&apos;ll be lost in a world of delectable food.
             </p>
 
             {/* Download Buttons */}

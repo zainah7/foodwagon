@@ -332,10 +332,22 @@ export const getColor = (path: string): string => {
   let value: any = colors;
   
   for (const key of keys) {
-    value = value?.[key];
+    if (typeof value === 'object' && value !== null && key in value) {
+      const nestedValue: any = value[key];
+      if (typeof nestedValue === 'string') {
+        value = nestedValue;
+        break; 
+      } else if (typeof nestedValue === 'object') {
+        value = nestedValue;
+      } else {
+        return path;
+      }
+    } else {
+      return path;
+    }
   }
   
-  return value || path;
+  return typeof value === 'string' ? value : path;
 };
 
 /**

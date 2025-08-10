@@ -18,10 +18,14 @@ export const useDesignTokens = () => {
       let value: any = colors;
       
       for (const key of keys) {
-        value = value?.[key];
+        if (typeof value === 'object' && value !== null && key in value) {
+          value = value[key as keyof typeof value];
+        } else {
+          return path; // Return original path if not found
+        }
       }
       
-      return value || path;
+      return typeof value === 'string' ? value : path;
     },
     
     getFontFamily: (family: keyof typeof typography.fontFamily) => {

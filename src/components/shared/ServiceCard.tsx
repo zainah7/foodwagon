@@ -5,7 +5,7 @@ interface ServiceCardProps {
   title: string;
 }
 
-const ServiceCard = ({ icon, title }: ServiceCardProps) => {
+export const ServiceCard = ({ icon, title }: ServiceCardProps) => {
   return (
     <div className="flex items-center justify-center gap-4">
       <Image src={icon} alt={title} width={50} height={50} />
@@ -14,4 +14,4 @@ const ServiceCard = ({ icon, title }: ServiceCardProps) => {
   );
 };
 
-export default ServiceCard;
+
