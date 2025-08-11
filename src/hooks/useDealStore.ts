@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-interface DealItem {
+export interface DealItem {
   id: number;
   title: string;
   description: string;

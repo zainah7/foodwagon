@@ -1,36 +1,29 @@
 "use client";
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { usePopularItemsStore } from '@/hooks/usePopularItemsStore';
+import { usePopularItems } from '@/api/hooks/popularItem';
 import Image from 'next/image';
 import { Button } from '@/lib/shared';
 import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useQuery } from '@tanstack/react-query';
 
 
-// Handle order click (moved outside component)
 import type { PopularItem } from '@/hooks/usePopularItemsStore';
 const handleOrderClick = (item: PopularItem) => {
-  // TODO: Implement order logic, e.g., open modal or add to cart
   alert(`Order placed for: ${item.title}`);
 };
 
 const PopularItems: React.FC = () => {
-  // Zustand + React Query
+
+
   const setPopularItems = usePopularItemsStore((state) => state.setPopularItems);
   const popularItems = usePopularItemsStore((state) => state.popularItems);
-  const { isLoading, error } = useQuery({
-    queryKey: ['popularItems'],
-    queryFn: async () => {
-      const res = await fetch('http://localhost:4000/popularItems');
-      if (!res.ok) throw new Error('Failed to fetch popular items');
-      const data = await res.json();
-      setPopularItems(data);
-      return data;
-    },
-    staleTime: 1000 * 60 * 5,
-  });
+  const { data, isLoading, error } = usePopularItems();
+  useEffect(() => {
+    if (data) setPopularItems(data);
+  }, [data, setPopularItems]);
 
-  // Carousel state
+
   const [page, setPage] = React.useState(0);
   const itemsPerPage = 5;
   const totalPages = Math.ceil(popularItems.length / itemsPerPage);

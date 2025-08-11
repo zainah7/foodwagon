@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-interface RestaurantItem {
+export interface RestaurantItem {
   id: number;
   image: string;
   logo: string;

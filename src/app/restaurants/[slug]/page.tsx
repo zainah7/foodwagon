@@ -4,7 +4,7 @@ import Image from 'next/image';
 type SegmentParams = { [key: string]: string | string[] | undefined };
 
 async function getRestaurantBySlug(slug: string) {
-  const res = await fetch(`http://localhost:4000/restaurants?slug=${slug}`);
+  const res = await fetch(`http://localhost:3001/restaurants?slug=${slug}`);
   if (!res.ok) return null;
   const data = await res.json();
   return data[0] || null;

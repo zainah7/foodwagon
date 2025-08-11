@@ -1,22 +1,22 @@
 export const steps = [
   {
-    icon: '/assets/images/location.png',
-    title: 'Select location',
-    description: 'Choose the location where your food will be delivered.',
+    icon: '/assets/icons/quick-delivery.svg',
+    title: 'Choose Your Food',
+    description: 'Browse and select your favorite meals from a wide variety of restaurants.'
   },
   {
-    icon: '/assets/images/order.png',
-    title: 'Choose order',
-    description: 'Check over hundreds of menus to pick your favorite food',
+    icon: '/assets/icons/live-tracking.svg',
+    title: 'Place Your Order',
+    description: 'Add items to your cart and place your order in just a few clicks.'
   },
   {
-    icon: '/assets/images/pay.png',
-    title: 'Pay advanced',
-    description: "It's quick, safe, and simple. Select several methods of payment",
+    icon: '/assets/icons/daily-discounts.svg',
+    title: 'Enjoy Fast Delivery',
+    description: 'Sit back and relax while your food is delivered quickly to your door.'
   },
   {
-    icon: '/assets/images/meals.png',
-    title: 'Enjoy meals',
-    description: 'Food is made and delivered directly to your home.',
-  },
+    icon: '/assets/icons/live-tracking.svg',
+    title: 'Track Your Order',
+    description: 'Monitor your order in real-time from the restaurant to your doorstep.'
+  }
 ];

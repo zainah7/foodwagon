@@ -1,8 +1,9 @@
 
 "use client"
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { useRestaurantStore } from '@/hooks/useRestaurantStore';
-import { useQuery } from '@tanstack/react-query';
+import { useRestaurants } from '@/api/hooks/restaurant';
 import { RestaurantCard } from '@/lib/shared';
 import Link from 'next/link';
 
@@ -10,22 +11,14 @@ import Link from 'next/link';
 
 const FeaturedRestaurants: React.FC = () => {
 
-  // Zustand + React Query
+
   const setRestaurants = useRestaurantStore((state) => state.setRestaurants);
   const restaurants = useRestaurantStore((state) => state.restaurants);
-  const { isLoading, error } = useQuery({
-    queryKey: ['restaurants'],
-    queryFn: async () => {
-      const res = await fetch('http://localhost:4000/restaurants');
-      if (!res.ok) throw new Error('Failed to fetch restaurants');
-      const data = await res.json();
-      setRestaurants(data);
-      return data;
-    },
-    staleTime: 1000 * 60 * 5,
-  });
+  const { data, isLoading, error } = useRestaurants();
+  useEffect(() => {
+    if (data) setRestaurants(data);
+  }, [data, setRestaurants]);
 
-  // Optionally, you can remove handleRestaurantClick if not needed
 
   return (
     <section className="py-8">

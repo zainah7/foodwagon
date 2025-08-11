@@ -1,28 +1,22 @@
 "use client";
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useQuery } from '@tanstack/react-query';
 import { useDealStore } from '@/hooks/useDealStore';
+import { useDeals } from '@/api/hooks/deal';
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { Button } from "../../lib/shared";
 
 
 const Deals: React.FC = () => {
+
   const setDeals = useDealStore((state) => state.setDeals);
   const deals = useDealStore((state) => state.deals);
-
-  useQuery({
-    queryKey: ['deals'],
-    queryFn: async () => {
-      const res = await fetch('http://localhost:4000/deals');
-      if (!res.ok) throw new Error('Failed to fetch deals');
-      const data = await res.json();
-      setDeals(data);
-      return data;
-    },
-    staleTime: 1000 * 60 * 5,
-  });
+  const { data } = useDeals();
+  useEffect(() => {
+    if (data) setDeals(data);
+  }, [data, setDeals]);
 
   const router = useRouter();
 

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-interface DiscountItem {
+export interface DiscountItem {
   id: number;
   image: string;
   discount: string;

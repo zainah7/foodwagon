@@ -180,5 +180,97 @@
       "originalPrice": "$3.50",
       "rating": 4.5
     }
+  ],
+  "foodItems": [
+    {
+      "id": 1,
+      "image": "/assets/images/burger.png",
+      "title": "Cheese Burger",
+      "restaurant": "Burger Arena",
+      "price": "$3.88",
+      "originalPrice": "$4.50",
+      "rating": 4.9
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/toffes-cake.png",
+      "title": "Toffe's Cake",
+      "restaurant": "Top Sticks",
+      "price": "$4.00",
+      "originalPrice": "$5.20",
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "image": "/assets/images/dancake.png",
+      "title": "Dancake",
+      "restaurant": "Cake World",
+      "price": "$1.99",
+      "originalPrice": "$2.50",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "image": "/assets/images/crispy-sandwitch.png",
+      "title": "Crispy Sandwitch",
+      "restaurant": "Fastfood Dine",
+      "price": "$3.00",
+      "originalPrice": "$3.75",
+      "rating": 4.6
+    },
+    {
+      "id": 5,
+      "image": "/assets/images/thai-soup.png",
+      "title": "Thai Soup",
+      "restaurant": "Foody Mood",
+      "price": "$2.79",
+      "originalPrice": "$3.50",
+      "rating": 4.5
+    },
+    {
+      "id": 6,
+      "image": "/assets/images/pizza.png",
+      "title": "Pizza",
+      "restaurant": "Pizza Hub",
+      "price": "$8.99",
+      "originalPrice": "$10.99",
+      "rating": 4.7
+    },
+    {
+      "id": 7,
+      "image": "/assets/images/noodles.png",
+      "title": "Noodles",
+      "restaurant": "Noodle Express",
+      "price": "$6.50",
+      "originalPrice": "$8.00",
+      "rating": 4.6
+    },
+    {
+      "id": 8,
+      "image": "/assets/images/steak.png",
+      "title": "Steak",
+      "restaurant": "Steak House",
+      "price": "$12.99",
+      "originalPrice": "$15.00",
+      "rating": 4.8
+    },
+    {
+      "id": 9,
+      "image": "/assets/images/chowmein.png",
+      "title": "Chowmein",
+      "restaurant": "Noodle Bar",
+      "price": "$5.50",
+      "originalPrice": "$6.50",
+      "rating": 4.4
+    },
+    {
+      "id": 10,
+      "image": "/assets/images/meals.png",
+      "title": "Meals",
+      "restaurant": "Meal Time",
+      "price": "$7.99",
+      "originalPrice": "$9.00",
+      "rating": 4.3
+    }
   ]
 }

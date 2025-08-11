@@ -1,25 +1,19 @@
 
 "use client";
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { useQuery } from '@tanstack/react-query';
 import { useDiscountStore } from '@/hooks/useDiscountStore';
+import { useDiscounts } from '@/api/hooks/discount';
 
 const Discounts: React.FC = () => {
+
   const setDiscounts = useDiscountStore((state) => state.setDiscounts);
   const discounts = useDiscountStore((state) => state.discounts);
-
-  const { isLoading, error } = useQuery({
-    queryKey: ['discounts'],
-    queryFn: async () => {
-      const res = await fetch('http://localhost:4000/discounts');
-      if (!res.ok) throw new Error('Failed to fetch discounts');
-      const data = await res.json();
-      setDiscounts(data);
-      return data;
-    },
-    staleTime: 1000 * 60 * 5, // 5 minutes
-  });
+  const { data, isLoading, error } = useDiscounts();
+  useEffect(() => {
+    if (data) setDiscounts(data);
+  }, [data, setDiscounts]);
 
   return (
     <section className="py-12">

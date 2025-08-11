@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-interface FoodItem {
+export interface FoodItem {
   id: number;
   image: string;
   title: string;
