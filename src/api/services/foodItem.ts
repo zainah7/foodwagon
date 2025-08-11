@@ -1,7 +1,7 @@
-import axios from 'axios';
+import api from '@/lib/axios';
 import { FoodItem } from '@/hooks/useFoodItemsStore';
 
-export const fetchFoodItems = async (): Promise<FoodItem[]> => {
-  const response = await axios.get('http://localhost:3001/foodItems');
+export async function fetchFoodItems(): Promise<FoodItem[]> {
+  const response = await api.get('/foodItems');
   return response.data;
-};
+}

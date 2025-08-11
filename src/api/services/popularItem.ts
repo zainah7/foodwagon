@@ -1,7 +1,7 @@
-import axios from "axios";
+import api from '@/lib/axios';
 import type { PopularItem } from "@/hooks/usePopularItemsStore";
 
 export const fetchPopularItems = async (): Promise<PopularItem[]> => {
-  const res = await axios.get("http://localhost:3001/popularItems");
+  const res = await api.get("/popularItems");
   return res.data;
 };
